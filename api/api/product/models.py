@@ -8,7 +8,7 @@ class Category(models.Model):
     """
     title = models.CharField(max_length=30, verbose_name=_("Subcategory title"))
     description = models.TextField(max_length=2000, blank=True, null=True, verbose_name=_("Description"))
-    image = models.ImageField(blank=True, null=True)
+    image = models.ImageField(upload_to="media/category", blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
@@ -27,7 +27,7 @@ class Product(models.Model):
     """
     title = models.CharField(max_length=30, verbose_name=_("Title"))
     description = models.TextField(max_length=2000, verbose_name=_("Description"))
-    image = models.ImageField(blank=True, null=True)
+    image = models.ImageField(upload_to="media/product", blank=True, null=True)
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
