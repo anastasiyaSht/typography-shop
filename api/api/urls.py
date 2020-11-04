@@ -25,6 +25,7 @@ urlpatterns = [
          include(
              ([
                  path("", include("api.order.urls", namespace="order")),
+                 path("", include("api.product.urls", namespace="product")),
                  path('openapi', get_schema_view(
                         title="Your Project",
                         description="API for all things …",
