@@ -29,7 +29,7 @@ class Product(models.Model):
     description = models.TextField(max_length=2000, verbose_name=_("Description"))
     image = models.ImageField(upload_to="media/product", blank=True, null=True)
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products")
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
